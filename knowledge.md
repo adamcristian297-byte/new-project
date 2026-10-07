@@ -32,21 +32,19 @@ main entry points, source directories, config files, and any generated/output di
 
 **Current repo state (as of 2026-10-07):**
 - `git init` done; default branch `master`.
-- **No commits yet** and **no remote configured**.
-- **Blocker 1 — identity:** `user.name` / `user.email` are not set (user chose to
-  defer). Commits will fail with "unable to auto-detect author" until this is fixed:
-  ```
-  git config user.name "Your Name"
-  git config user.email "you@users.noreply.github.com"
-  ```
-- **Blocker 2 — remote:** no `gh` CLI and no stored GitHub credentials on this
-  machine. User will provide a repo URL; then:
-  ```
-  git remote add origin <REPO_URL>
-  git push -u origin master
-  ```
-  First push will trigger Git Credential Manager's login popup (interactive — not
-  runnable headlessly by the agent). After that, pushing works with stored creds.
+- **Remote:** `origin` → `https://github.com/adamcristian297-byte/new-project.git`
+  (repo is public and currently empty; verified via `git ls-remote`).
+- **Identity (repo-local):** `user.name` = `adamcristian297-byte`, `user.email` =
+  `adamcristian297-byte@users.noreply.github.com` (GitHub noreply — chosen by the
+  agent as a placeholder; user may replace with their preferred identity via
+  `git config user.name/user.email`).
+- **First commit:** `699c495` — knowledge.md (root commit on `master`).
+- **Open blocker — push auth:** no `gh` CLI and no stored credentials on this
+  machine. First `git push -u origin master` triggers Git Credential Manager's
+  interactive GitHub login popup; the user must complete it once (never paste
+  tokens into chat). After that, pushes work with stored credentials.
+- `.freebuff/` remains untracked (agent metadata — leave out of commits unless the
+  user asks).
 - **Pushing** requires the user's explicit request per session; the milestone
   commits themselves are pre-authorized by the user.
 
