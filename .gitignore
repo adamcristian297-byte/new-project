@@ -1,0 +1,33 @@
+# --- Python / uv ---
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+
+# --- SQLite / generated data ---
+*.db
+*.sqlite3
+
+# --- Node / Next.js ---
+node_modules/
+.next/
+out/
+.turbo/
+coverage/
+playwright-report/
+test-results/
+
+# --- Secrets & env (never commit real values) ---
+.env
+.env.local
+.env.*.local
+
+# --- OS / editor junk ---
+Thumbs.db
+.DS_Store
